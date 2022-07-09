@@ -20,17 +20,17 @@ function writePassword() {
   // If character amount is less then 8 or greater than 128 characters
   if (charAmount < 8 || charAmount > 128) {
     // return;
-    alert("Please choose the correct amount of characters");
+    console.log("Please choiceChosen the correct amount of characters");
   }
 
   // All 4 options chosen
   if (uppercase && lowercase && specialChars && numbers) {
     choiceChosen = userChoices.concat(uppercase && lowercase && specialChars && numbers);
     console.log("uppercase, lowercase, special characters, numbers");
-
-    // 3 Options chosen
-  } else if (uppercase && lowercase && specialChars) {
-    choiceChosen = userChoices.concat(upercase && lowercase && specialChars);
+  }
+  // 3 Options chosen
+  if (uppercase && lowercase && specialChars) {
+    choiceChosen = userChoices.concat(uppercase && lowercase && specialChars);
     console.log("uppercase, lowercase, special characters");
   } else if (uppercase && lowercase && numbers) {
     choiceChosen = userChoices.concat(uppercase && lowercase && numbers);
@@ -44,7 +44,7 @@ function writePassword() {
   }
 
   // 2 Options chosen
-  else if (uppercase && lowercase) {
+  if (uppercase && lowercase) {
     choiceChosen = userChoices.concat(uppercase && lowercase);
     console.log("uppercase, lowercase");
   } else if (uppercase && specialChars) {
@@ -62,7 +62,7 @@ function writePassword() {
   }
 
   // 1 option chosen
-  else if (uppercase) {
+  if (uppercase) {
     choiceChosen = userChoices.concat(uppercase);
     console.log("uppercase");
   } else if (lowercase) {
@@ -76,19 +76,19 @@ function writePassword() {
     console.log("numbers");
   }
 
-  var password = generatePassword(userChoices, choiceChosen, passwordText);
+
+
+  // var password = generatePassword();
+
+  for (var i = 0; i < password.length; i++) {
+    choiceChosen += password.password(Math.floor(Math.random()));
+    console.log(i)
+  }
+
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-}
-
-
-
-function generatePassword(userChoices, choiceChosen, passwordText) {
-  for (var i = 0; i < userChoices.length; i++) {
-    var userChoices = choiceChosen[Math.floor(Math.random() * choiceChosen.length)];
-    passwordText;
-  }
 }
 
 // Add event listener to generate button
