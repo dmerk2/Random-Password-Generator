@@ -8,17 +8,18 @@ let generateBtn = document.querySelector("#generate");
 function generatePassword() {
   let choiceChosen;
   let userChoices = [];
-  let charAmount = parseInt(prompt("Choose between 8 and 128 characters for your password"));
-  let uppercase = parseInt(confirm("Do you want uppercase letters?"));
-  let lowercase = parseInt(confirm("Do you want lowercase letters?"));
-  let specialChars = parseInt(confirm("Do you want special characters?"));
-  let numbers = parseInt(confirm("Do you want numbers?"));
+  let charAmount = prompt("Choose between 8 and 128 characters for your password");
+  let uppercase = confirm("Do you want uppercase letters?");
+  let lowercase = confirm("Do you want lowercase letters?");
+  let specialChars = confirm("Do you want special characters?");
+  let numbers = confirm("Do you want numbers?");
 
 
   uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   specialCharsChosen = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
   numbersChosen = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  console.log(charAmount, uppercase, lowercase, specialChars, numbers);
   // If character amount is less then 8 or greater than 128 characters
   if (charAmount < 8 || charAmount > 128) {
     // return;
@@ -65,11 +66,12 @@ function generatePassword() {
   } else if (numbers) {
     choiceChosen = userChoices.concat(numbersChosen);
   }
+  for (let i = 0; i < password.length; i++) {
+    choiceChosen += password.password(Math.floor(Math.random()));
+  }
 }
 
-for (let i = 0; i < password.length; i++) {
-  choiceChosen += password.password(Math.floor(Math.random()));
-}
+
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
