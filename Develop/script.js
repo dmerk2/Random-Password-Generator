@@ -24,7 +24,6 @@ function generatePassword() {
   lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   specialCharsChosen = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
   numbersChosen = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  console.log(charAmount, uppercase, lowercase, specialChars, numbers);
 
   if (uppercase) {
     choiceChosen = choiceChosen.concat(uppercaseLetters)
@@ -37,57 +36,18 @@ function generatePassword() {
   }
   if (numbers) {
     choiceChosen = choiceChosen.concat(numbersChosen)
-    // return numbersChosen;
+    return numbersChosen;
   }
 
   console.log(choiceChosen)
-
+ 
   let password = "";
 
   for (let i = 0; i < charAmount; i++) {
-    Math.floor(Math.random() * charAmount)
+    var e = charAmount += charAmount(Math.floor(Math.random() * choiceChosen))
   }
   console.log(password);
-  // All 4 options chosen
-  //   if (uppercase && lowercase && specialChars && numbers) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && lowercaseLetters && specialCharsChosen && numbersChosen);
-  //     console.log("All 4 chosen")
-  //   }
-
-  //   // 3 Options chosen
-  //   if (uppercase && lowercase && specialChars) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && lowercaseLetters && specialCharsChosen);
-  //   } else if (uppercase && lowercase && numbers) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && lowercaseLetters && numbersChosen);
-  //   } else if (uppercase && lowercase && specialChars) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && lowercaseLetters && specialCharsChosen);
-  //   } else if (uppercase && specialChars && numbers) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && specialCharsChosen && numbersChosen);
-  //   }
-
-  //   // 2 Options chosen
-  //   if (uppercase && lowercase) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && lowercaseLetters);
-  //   } else if (uppercase && specialChars) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && specialCharsChosen);
-  //   } else if (uppercase && numbers) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters && numbersChosen);
-  //   } else if (specialChars && numbers) {
-  //     choiceChosen = userChoices.concat(specialCharsChosen && numbersChosen);
-  //   } else if (lowercase && numbers) {
-  //     choiceChosen = userChoices.concat(lowercaseLetters && numbersChosen);
-  //   }
-
-  //   // 1 option chosen
-  //   if (uppercase) {
-  //     choiceChosen = userChoices.concat(uppercaseLetters);
-  //   } else if (lowercase) {
-  //     choiceChosen = userChoices.concat(lowercaseLetters);
-  //   } else if (specialChars) {
-  //     choiceChosen = userChoices.concat(specialCharsChosen)
-  //   } else if (numbers) {
-  //     choiceChosen = userChoices.concat(numbersChosen);
-  //   }
+  
   // console.log(choiceChosen)
   //   for (let i = 0; i < password.length; i++) {
   //     choiceChosen += password.password(Math.floor(Math.random()));
