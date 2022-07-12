@@ -37,6 +37,7 @@ function generatePassword() {
   }
   if (numbers) {
     choiceChosen = choiceChosen.concat(numbersChosen)
+    // return numbersChosen;
   }
 
   console.log(choiceChosen)
@@ -93,9 +94,6 @@ function generatePassword() {
   //     console.log(choiceChosen)
   //   }
 }
-
-
-
 
 // Write password to the #password input
 function writePassword() {
