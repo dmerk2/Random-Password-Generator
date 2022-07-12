@@ -3,8 +3,6 @@ let generateBtn = document.querySelector("#generate");
 
 
 // Assignment Code
-
-
 function generatePassword() {
   let choiceChosen = [];
   let charAmount = prompt("Choose between 8 and 128 characters for your password");
@@ -23,7 +21,7 @@ function generatePassword() {
   uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   specialCharsChosen = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
-  numbersChosen = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  numbersChosen = ["1234567890"];
 
   if (uppercase) {
     choiceChosen = choiceChosen.concat(uppercaseLetters)
@@ -36,23 +34,15 @@ function generatePassword() {
   }
   if (numbers) {
     choiceChosen = choiceChosen.concat(numbersChosen)
-    return numbersChosen;
   }
 
   console.log(choiceChosen)
  
   let password = "";
 
-  for (let i = 0; i < charAmount; i++) {
-    var e = charAmount += charAmount(Math.floor(Math.random() * choiceChosen))
+  for (let i = 0; i < choiceChosen; i++) {
+    password += choiceChosen(Math.floor(Math.random() * choiceChosen))
   }
-  console.log(password);
-  
-  // console.log(choiceChosen)
-  //   for (let i = 0; i < password.length; i++) {
-  //     choiceChosen += password.password(Math.floor(Math.random()));
-  //     console.log(choiceChosen)
-  //   }
 }
 
 // Write password to the #password input
